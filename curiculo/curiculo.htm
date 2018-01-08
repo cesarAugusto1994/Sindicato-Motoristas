@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head><script LANGUAGE="JAVASCRIPT">
+<!--
+function FORMA(num){
+Resp=""
+if(num<10){
+Resp="0"
+}
+Resp=Resp+num
+return Resp
+}
+function atualiza(){
+agora=new Date()
+hora=agora.getHours()
+minu=agora.getMinutes()
+segu=agora.getSeconds()
+texto=FORMA(hora)+ ":" + FORMA(minu) + ":" +FORMA(segu)
+relogio.value=texto
+setTimeout('atualiza()',200)
+
+}
+//-->
+</script>
+<title>::: Sethobru - Sindicato dos Empregados, Brusque e Regi&atilde;o - SC. :::</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+<link href="css.css" rel="stylesheet" type="text/css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="atualiza()">
+<form name="senddata" method="post" action="send.php">
+  <p align="left" class="ArialMSUnicodes"><font size="2" face="Verdana">Peencha 
+    seus Dados</font></p>
+  <p align="left" class="ArialMSUnicodes"><font size="2" face="Verdana">Curriculum 
+    Vitae</font></p>
+  <p align="left" class="ArialMSUnicodes"><font size="2" face="Verdana">Dados 
+    Pessoais e Documenta&ccedil;&atilde;o<br>
+    <br>
+    Nome: 
+    <input name="nome" type="text" id="nome3">
+    <br>
+    Nascimento: 
+    <input name="nascimento" type="text" id="nascimento">
+    (ex 00 / 00 / 0000)<br>
+    Estado Civil: 
+    <select name="est_civil" id="est_civil">
+      <option value="Casado (a)">Casado (a)</option>
+      <option value="Solteiro (a)">Solteiro (a)</option>
+      <option value="Viuvo (a)">Viuvo (a)</option>
+      <option value="Divorcidado (a)">Divorciado (a)</option>
+    </select>
+    <br>
+    Endere&ccedil;o: 
+    <input name="endereco" type="text" id="endereco">
+    N&ordm;: 
+    <input name="numero" type="text" id="numero">
+    <br>
+    Bairro: 
+    <input name="bairro" type="text" id="bairro" size="20">
+    Cidade: 
+    <input name="cidade" type="text" id="cidade" size="20">
+    Estado: 
+    <input name="estado" type="text" id="estado" size="2">
+    (ex SC, RS)<br>
+    Cep: 
+    <input name="cep" type="text" id="cep" size="20">
+    (ex: 00000-000)<br>
+    Telefone: 
+    <input name="telefone" type="text" id="telefone">
+    (ex: DDD+Telefone)<br>
+    Celular: 
+    <input name="celular" type="text" id="celular">
+    (ex: DDD+Telefone) </font></p>
+  <p align="left" class="ArialMSUnicodes"><font size="2" face="Verdana">RG: 
+    <input name="rg" type="text" id="rg">
+    <br>
+    CPF.: 
+    <input name="cpf" type="text" id="cpf">
+    <br>
+    Carteira Prof.: 
+    <input name="cart_profissional" type="text" id="cart_profissional">
+    <br>
+    Grupo Sangue: 
+    <input name="grupo_sanguineo" type="text" id="grupo_sanguineo" size="1" maxlength="1">
+    RH: 
+    <select name="rh" id="rh">
+      <option value="Positivo">Positivo</option>
+      <option value="Negativo">Negativo</option>
+    </select>
+    <br>
+    CNH: 
+    <input name="cnh" type="text" id="cnh" size="20">
+    – Cat. 
+    <input name="cat_cnh" type="text" id="cat_cnh" size="5" maxlength="5">
+    <br>
+    e-mail: 
+    <input name="email" type="text" id="email">
+    (ex: fulano@servidor.com.br)<br>
+  </font></p>
+  <p align="left" class="ArialMSUnicodes"><font size="2" face="Verdana"><br>
+    <br>
+    Escolaridade: 
+    <select name="escolaridade" id="escolaridade">
+      <option value="Ensino Fundamental">Ensino Fundamental</option>
+      <option value="Ensino Medio">Ensino Medio</option>
+      <option value="Ensino Superior">Ensino Superior</option>
+      <option value="Ensino Fundamental Incompleto">Ensino Fundamental Incompleto</option>
+      <option value="Ensino Medio Incompleto">Ensino Medio Incompleto</option>
+      <option value="Ensino Superior Incompleto">Ensino Superior Incompleto</option>
+    </select>
+    </font></p>
+  <p align="left" class="ArialMSUnicodes"><font size="2" face="Verdana">Experi&ecirc;ncia 
+    Profissional (tr&ecirc;s ultimas experiencias) <br>
+    Fun&ccedil;&atilde;o: 
+    <input name="exp1_funcao" type="text" id="exp1_funcao">
+    <br>
+    Empresa: 
+    <input name="exp1_empresa" type="text" id="exp1_empresa">
+    – Fone: 
+    <input name="exp1_telefone" type="text" id="exp1_telefone">
+    <br>
+    Per&iacute;odo: 
+    <input name="exp1_entrada" type="text" id="exp1_entrada" size="10" maxlength="10">
+    &agrave; 
+    <input name="exp1_saida" type="text" id="exp1_saida" size="10" maxlength="10">
+    (ex: 00/00/0000 nos 2 campos)</font></p>
+  <p align="left" class="ArialMSUnicodes"><font size="2" face="Verdana">Fun&ccedil;&atilde;o: 
+    <input name="exp2_funcao" type="text" id="exp2_funcao">
+    <br>
+    Empresa: 
+    <input name="exp2_empresa" type="text" id="exp2_empresa">
+    – Fone: 
+    <input name="exp2_telefone" type="text" id="exp2_telefone">
+    <br>
+    Per&iacute;odo: 
+    <input name="exp2_entrada" type="text" id="exp2_entrada" size="10" maxlength="10">
+    &agrave; 
+    <input name="exp2_saida" type="text" id="exp2_saida" size="10" maxlength="10">
+    (ex: 00/00/0000 nos 2 campos)</font></p>
+  <p align="left" class="ArialMSUnicodes"><font size="2" face="Verdana">Fun&ccedil;&atilde;o: 
+    <input name="exp3_funcao" type="text" id="exp3_funcao">
+    <br>
+    Empresa: 
+    <input name="exp3_empresa" type="text" id="exp3_empresa">
+    – Fone: 
+    <input name="exp3_telefone" type="text" id="exp3_telefone">
+    <br>
+    Per&iacute;odo: 
+    <input name="exp3_entrada" type="text" id="exp3_entrada" size="10" maxlength="10">
+    &agrave; 
+    <input name="exp3_saida" type="text" id="exp3_saida" size="10" maxlength="10">
+    (ex: 00/00/0000 nos 2 campos)</font></p>
+  <p align="left" class="ArialMSUnicodes"><font size="2" face="Verdana">Outros: 
+    (separe os cursos com &quot;; &quot;)<br>
+    <textarea name="outros_cursos" cols="30" rows="5" id="outros_cursos"></textarea>
+    </font></p>
+  <p align="left" class="ArialMSUnicodes"><font size="2" face="Verdana">Descreva 
+    seus conhecimentos: (separe com &quot;; &quot;)<br>
+    <textarea name="outros_conhecimentos" cols="30" rows="5" id="outros_conhecimentos"></textarea>
+  </font></p>
+  <p align="left"> <font face="Verdana"><span class="ArialMSUnicodes"><font size="2"> 
+    <input type="submit" name="Submit" value="Enviar">
+    <input type="submit" name="reset value" value="Limpar">
+    <br>
+  </font></span></font></p>
+</form>
+</body>
+</html>

@@ -1,0 +1,47 @@
+body{
+	margin: 0;
+	padding: 0;
+	text-align:center; /* hack para o IE */
+}
+#tudo{
+	width:600px;
+	margin: 0 auto;
+	padding: 0;
+	text-align:left; /* "remédio" para o hack do IE */
+}
+fieldset{
+	width:100%;
+	border: 1px solid #000;
+	_padding:6px;
+}
+legend{
+	background-color:#6498CA;
+	font-family:"Verdana", Arial, Helvetica, sans-serif;
+	color:#FFFFFF;
+	padding:5px;
+	font-weight:bold;	
+}
+#tabela{
+	width:98%;
+}
+#linha{
+	width:100%;
+	height:100%;
+	z-index:99;
+	_padding-left:5px;
+}
+#nome{
+	width:40%;
+	float:left;
+	z-index:0;
+	color:#FF0000;
+}
+#campo{
+	width:60%;
+	float:left;
+	z-index:1;
+}
+
+.negrito{
+	font-weight:bold;
+}

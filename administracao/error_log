@@ -1,0 +1,2 @@
+[01-Dec-2016 11:30:05 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home/sindimotoristasc/public_html/administracao/inc_erase.php on line 5
+[01-Dec-2016 11:30:45 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/sindimotoristasc/public_html/administracao/inc_erase.php on line 4

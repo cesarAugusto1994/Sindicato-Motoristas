@@ -1,0 +1,41 @@
+CREATE TABLE `noticias` (
+  `id` int(11) NOT NULL auto_increment,
+  `cometarios_id` int(11) NOT NULL,
+  `categorias_id` int(11) NOT NULL,
+  `titulo` varchar(45) NOT NULL,
+  `sub_titulo` varchar(255) NOT NULL,
+  `conteudo` text NOT NULL,
+  `autor` varchar(45) NOT NULL,
+  `data_not` date NOT NULL,
+  `hora_not` time NOT NULL,
+  `categoria` varchar(45) NOT NULL,
+  `ativar` char(3) NOT NULL default 'off',
+  PRIMARY KEY  (`id`),
+  KEY `noticias_FKIndex1` (`categorias_id`),
+  KEY `noticias_FKIndex2` (`cometarios_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=0 DEFAULT CHARSET=latin1 AUTO_INCREMENT=0 ;
+
+
+
+CREATE TABLE `comentario` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `noticias_id` int(10) unsigned NOT NULL default '0',
+  `nome` varchar(255) NOT NULL default '',
+  `email` varchar(255) NOT NULL default '',
+  `site` varchar(255) default NULL,
+  `comentario` text NOT NULL,
+  `data_coment` date NOT NULL default '0000-00-00',
+  `hora` time NOT NULL default '00:00:00',
+  PRIMARY KEY  (`id`,`noticias_id`),
+  KEY `comentario_FKIndex1` (`noticias_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=0 DEFAULT CHARSET=latin1 AUTO_INCREMENT=0 ;
+
+
+
+CREATE TABLE `categorias` (
+  `id_cat` int(11) NOT NULL auto_increment,
+  `nome` varchar(45) default NULL,
+  `descricao` varchar(255) default NULL,
+  PRIMARY KEY  (`id_cat`)
+) ENGINE=MyISAM AUTO_INCREMENT=0 DEFAULT CHARSET=latin1 AUTO_INCREMENT=0 ;
+

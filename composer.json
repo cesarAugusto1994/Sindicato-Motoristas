@@ -1,0 +1,13 @@
+{
+    "name": "cesar/public_html",
+    "authors": [
+        {
+            "name": "César Augusto",
+            "email": "cezzaar@gmail.com"
+        }
+    ],
+    "require": {
+        "eduardokum/laravel-boleto": "^0.7.1",
+        "setasign/fpdf": "1.8.1"
+    }
+}
