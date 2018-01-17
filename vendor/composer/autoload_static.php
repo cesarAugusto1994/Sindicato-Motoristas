@@ -9,6 +9,7 @@ class ComposerStaticInit73c0cc598f4841371aaf1894a194f642
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '72579e7bd17821bb1321b87411366eae' => __DIR__ . '/..' . '/illuminate/support/helpers.php',
+        '04c6c5c2f7095ccf6c481d3e53e1776f' => __DIR__ . '/..' . '/mustangostang/spyc/Spyc.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -44,6 +45,7 @@ class ComposerStaticInit73c0cc598f4841371aaf1894a194f642
         ),
         'C' => 
         array (
+            'Cnab\\' => 5,
             'Carbon\\' => 7,
         ),
     );
@@ -108,6 +110,10 @@ class ComposerStaticInit73c0cc598f4841371aaf1894a194f642
         'Doctrine\\Common\\Inflector\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector',
+        ),
+        'Cnab\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/andersondanilo/cnab_php/src/Cnab',
         ),
         'Carbon\\' => 
         array (

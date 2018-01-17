@@ -2,8 +2,8 @@
 
 //echo 'viva';
 
-			//include "../administracao/config/config.php";
-#var_dump($_REQUEST);
+//include "../administracao/config/config.php";
+//var_dump($_REQUEST);
 require __DIR__ . '/../vendor/autoload.php';
 
 //exit;
@@ -39,6 +39,7 @@ $cidade = $_POST['cidade'];
 $estado = $_POST['estado'];
 $cep = $_POST['cep'];
 $bairro = $_POST['bairro'];
+$cpf = $_POST['documento'];
 // DADOS DO BOLETO PARA O SEU CLIENTE
 $dias_de_prazo_para_pagamento = 0;
 $taxa_boleto = 0;
@@ -128,7 +129,7 @@ $pagador = new \Eduardokum\LaravelBoleto\Pessoa(
         'cep'       => $cep,
         'uf'        => $estado,
         'cidade'    => $cidade,
-        'documento' => $dadosboleto["numero_documento"],
+        'documento' => $cpf,
     ]
 );
 $boleto = new Eduardokum\LaravelBoleto\Boleto\Banco\Caixa(
@@ -138,13 +139,13 @@ $boleto = new Eduardokum\LaravelBoleto\Boleto\Banco\Caixa(
         'valor'                  => $valor_cobrado,
         'multa'                  => false,
         'juros'                  => false,
-        'numero'                 => 1,
-        'numeroDocumento'        => $dadosboleto["numero_documento"],
+        'numero'                 => 13,
+        'numeroDocumento'        => 1,
         'pagador'                => $pagador,
         'beneficiario'           => $beneficiario,
         'agencia'                => $dadosboleto["agencia"],
         'conta'                  => $dadosboleto["conta_cedente"],
-        'carteira'               => 'RG',
+        'carteira'               => 'SR',
         'codigoCliente'          => $dadosboleto["conta_cedente"],
         'descricaoDemonstrativo' => $dadosboleto["demonstrativo"],
         'instrucoes'             => $dadosboleto["instrucoes"],

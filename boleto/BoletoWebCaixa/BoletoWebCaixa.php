@@ -178,7 +178,7 @@ if (isset($url_logomarca) && trim($url_logomarca)!="")
                     $msg_multa_juros .= ((trim($msg_multa_juros)=="")? "":" e ") . "juros de " . $juros_dia . "%";
             }
             if (!trim($msg_multa_juros=="")) {
-                    print "&nbsp;Após o vencimento cobrar ".$msg_multa_juros." ao dia.";
+                    print "&nbsp;Apï¿½s o vencimento cobrar ".$msg_multa_juros." ao dia.";
             } else print "&nbsp;";
 	?>
         </span>

@@ -8,6 +8,7 @@
     ],
     "require": {
         "eduardokum/laravel-boleto": "^0.7.1",
-        "setasign/fpdf": "1.8.1"
+        "setasign/fpdf": "1.8.1",
+        "andersondanilo/cnab_php": "^1.3"
     }
 }

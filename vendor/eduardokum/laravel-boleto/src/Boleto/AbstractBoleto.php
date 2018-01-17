@@ -223,7 +223,7 @@ abstract class AbstractBoleto implements BoletoContract
      *
      * @var string
      */
-    protected $localPagamento = 'Pagável em qualquer agência bancária até o vencimento.';
+    protected $localPagamento = 'Preferencialmente nas Casas Lotérica Até o Valor Limite.';
     /**
      * Array com as linhas de instruções
      *

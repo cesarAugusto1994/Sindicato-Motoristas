@@ -21,5 +21,6 @@ return array(
     'Illuminate\\Container\\' => array($vendorDir . '/illuminate/container'),
     'Eduardokum\\LaravelBoleto\\' => array($vendorDir . '/eduardokum/laravel-boleto/src'),
     'Doctrine\\Common\\Inflector\\' => array($vendorDir . '/doctrine/inflector/lib/Doctrine/Common/Inflector'),
+    'Cnab\\' => array($vendorDir . '/andersondanilo/cnab_php/src/Cnab'),
     'Carbon\\' => array($vendorDir . '/nesbot/carbon/src/Carbon'),
 );
