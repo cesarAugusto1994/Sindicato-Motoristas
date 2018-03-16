@@ -1,5 +1,8 @@
 <?php
 
+ini_set('display_errors', E_ALL);
+ini_set('error_reporting', true);
+
 //echo 'viva';
 
 //include "../administracao/config/config.php";
@@ -22,8 +25,8 @@ require __DIR__ . '/../vendor/autoload.php';
 			)VALUES(
 			'$nome','$documento','$endereco','$cidade','$estado','$cep','$data','$hora','$REMOTE_ADDR','A'
 			)";
-			$result = mysql_query($query) or die ("Error in query: $query. " .mysql_error());				
-			} 
+			$result = mysql_query($query) or die ("Error in query: $query. " .mysql_error());
+			}
 */$result = [];
 // ------------------------- DADOS DIN�MICOS DO SEU CLIENTE PARA A GERA��O DO BOLETO (FIXO OU VIA GET) -------------------- //
 $data		=	date("Y-m-d");
@@ -72,8 +75,10 @@ $dadosboleto["endereco2"] = "$cidade - $estado -  CEP: $cep";
 // INFORMACOES PARA O CLIENTE
 $dadosboleto["demonstrativo"] = [
 	"Pagamento de Contribuição com o Sindicato",
-	"Contribuição referente Sind Mot Ajud Cobr Op Maq ES",
-	"http://www.sindimotoristas.com.br"
+	"Contribuição referente Sind Mot Ajud Cobr Op Maq ES, http://www.sindimotoristas.com.br",
+	"SAC CAIXA: 0800 726 0101 (informações, reclamações, sugestões e elogios)",
+	"Para pessoas com deficiência auditiva ou de fala: 0800 726 2492",
+	"Ouvidoria: 0800 725 7474, caixa.gov.br"
 ];
 
 $dadosboleto["instrucoes"] = [
@@ -87,7 +92,7 @@ $dadosboleto["instrucoes"] = [
 // DADOS OPCIONAIS DE ACORDO COM O BANCO OU CLIENTE
 $dadosboleto["quantidade"] = "";
 $dadosboleto["valor_unitario"] = "";
-$dadosboleto["aceite"] = "";		
+$dadosboleto["aceite"] = "";
 $dadosboleto["especie"] = "R$";
 $dadosboleto["especie_doc"] = "";
 
@@ -106,9 +111,9 @@ $dadosboleto["cpf_cnpj"] = "000.856.979/0001-02";
 $dadosboleto["endereco"] = "Dr. Brício Mesquita, Nº 20 Bairro Maria Ortiz";
 $dadosboleto["cidade"] = "Cachoeiro de Itapemirim";
 $dadosboleto["uf"] = "ES";
-$dadosboleto["cedente"] = "Sindicatos dos Motoristas do sul do Espírito Santo";
+$dadosboleto["cedente"] = "SINDICATO DOS MOTORISTAS, AJUD, COBR E OP DE MAQ PNEUS DO SUL DO EST DO ESPIRITO SANTO";
 
-include("include/funcoes_cef_sigcb.php"); 
+include("include/funcoes_cef_sigcb.php");
 
 $beneficiario = new \Eduardokum\LaravelBoleto\Pessoa(
     [
@@ -120,7 +125,6 @@ $beneficiario = new \Eduardokum\LaravelBoleto\Pessoa(
         'documento' => $dadosboleto["cpf_cnpj"],
     ]
 );
-
 $pagador = new \Eduardokum\LaravelBoleto\Pessoa(
     [
         'nome'      => $dadosboleto["sacado"],
@@ -145,7 +149,7 @@ $boleto = new Eduardokum\LaravelBoleto\Boleto\Banco\Caixa(
         'beneficiario'           => $beneficiario,
         'agencia'                => $dadosboleto["agencia"],
         'conta'                  => $dadosboleto["conta_cedente"],
-        'carteira'               => 'SR',
+        'carteira'               => 'RG',
         'codigoCliente'          => $dadosboleto["conta_cedente"],
         'descricaoDemonstrativo' => $dadosboleto["demonstrativo"],
         'instrucoes'             => $dadosboleto["instrucoes"],
@@ -178,8 +182,8 @@ include("include/layout_cef.php");
 				'$data',
 				'$hora',
 				'$REMOTE_ADDR',
-				'NB'					
+				'NB'
 				)";
-				//$result = mysql_query($query) or die ("Error in query: $query. " .mysql_error());	
+				//$result = mysql_query($query) or die ("Error in query: $query. " .mysql_error());
 
 ?>

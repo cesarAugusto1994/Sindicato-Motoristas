@@ -231,8 +231,24 @@ class Pdf extends AbstractPdf implements PdfContract
         $this->Cell(50, $this->desc, $this->_('Agência/Código beneficiário'), 'TR', 1);
 
         $this->SetFont($this->PadraoFont, 'B', $this->fcel);
-        $this->Cell(120, $this->cell, $this->_($this->boleto[$i]->getBeneficiario()->getNomeDocumento()), 'LR');
+
+        $parte1 = $parte2 = "";
+
+        $benificiario = $this->boleto[$i]->getBeneficiario()->getNomeDocumento();
+
+        if(strlen($benificiario) > 60) {
+            $parte1 = substr($benificiario, 0, 69);
+            $parte2 = substr($benificiario, 69, 160);
+        } else {
+            $parte1 = $benificiario;
+        }
+
+        $this->Cell(120, $this->cell, $this->_($parte1), 'LR');
         $this->Cell(50, $this->cell, $this->_($this->boleto[$i]->getAgenciaCodigoBeneficiario()), 'R', 1, 'R');
+        $this->Cell(120, $this->cell, $this->_($parte2), 'LR');
+        $this->Cell(50, $this->cell, "", 'R', 1, 'R');
+
+        //$this->textFitCell(75, $this->cell, $this->_($this->boleto[$i]->getBeneficiario()->getNome()), 'LR', 0, 'L');
 
         $this->SetFont($this->PadraoFont, '', $this->fdes);
         $this->Cell(30, $this->desc, $this->_('Data do documento'), 'TLR');
