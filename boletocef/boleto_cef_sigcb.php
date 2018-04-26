@@ -54,7 +54,7 @@ $valor_cobrado = str_replace(",", ".",$valor_cobrado);
 $valor_boleto = 0;
 // Composi��o Nosso Numero - CEF SIGCB
 $dadosboleto["nosso_numero1"] = "000"; // tamanho 3
-$dadosboleto["nosso_numero_const1"] = "2"; //constanto 1 , 1=registrada , 2=sem registro
+$dadosboleto["nosso_numero_const1"] = "1"; //constanto 1 , 1=registrada , 2=sem registro
 $dadosboleto["nosso_numero2"] = "000"; // tamanho 3
 $dadosboleto["nosso_numero_const2"] = "4"; //constanto 2 , 4=emitido pelo proprio cliente
 $dadosboleto["nosso_numero3"] = "$criandonossonumero"; // tamanho 9
@@ -83,7 +83,6 @@ $dadosboleto["demonstrativo"] = [
 
 $dadosboleto["instrucoes"] = [
 "- Este título pode ser pago até o vencimento em qualquer agência",
-"- Caixa Econômica Federal ou bancos participantes do sistema",
 "- Após o vencimento, o título só poderá ser pago nas agências da",
 "- CAIXA, e casas lotéricas, ",
 "- Pagamento efetuado com cheque, reconhecido após a liquidação"
@@ -143,7 +142,7 @@ $boleto = new Eduardokum\LaravelBoleto\Boleto\Banco\Caixa(
         'valor'                  => $valor_cobrado,
         'multa'                  => false,
         'juros'                  => false,
-        'numero'                 => 13,
+        'numero'                 => 18,
         'numeroDocumento'        => 1,
         'pagador'                => $pagador,
         'beneficiario'           => $beneficiario,
@@ -161,7 +160,7 @@ $pdf = new Eduardokum\LaravelBoleto\Boleto\Render\Pdf();
 $pdf->addBoleto($boleto);
 $pdf->gerarBoleto($pdf::OUTPUT_SAVE, __DIR__ . DIRECTORY_SEPARATOR . 'arquivos' . DIRECTORY_SEPARATOR . 'cef.pdf');
 
-include("include/layout_cef.php");
+//include("include/layout_cef.php");
 
 // gerar o registro no lan�amento de boletos
 				$query = "
